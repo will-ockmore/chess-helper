@@ -52,7 +52,6 @@ module.exports = {
     'dot-location': ['warn', 'property'],
     eqeqeq: ['warn', 'allow-null'],
     'guard-for-in': 'warn',
-    'new-cap': ['warn', { newIsCap: true }],
     'new-parens': 'warn',
     'no-array-constructor': 'warn',
     'no-caller': 'warn',
@@ -169,7 +168,6 @@ module.exports = {
     // https://github.com/yannickcr/eslint-plugin-react/tree/master/docs/rules
     'react/jsx-equals-spacing': ['warn', 'never'],
     'react/jsx-no-duplicate-props': ['warn', { ignoreCase: true }],
-    'react/jsx-no-undef': 'warn',
     'react/jsx-pascal-case': ['warn', {
       allowAllCaps: true,
       ignore: [],

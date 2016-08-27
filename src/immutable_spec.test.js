@@ -1,3 +1,5 @@
+/* global describe, it */
+
 import {expect} from 'chai';
 import {List, Map} from 'immutable';
 
