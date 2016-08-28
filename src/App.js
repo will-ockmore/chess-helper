@@ -1,13 +1,15 @@
 import React, { Component } from 'react';
 
-import './App.css';
 import Piece from './components/chessboard/Piece';
+import Square from './components/chessboard/Square';
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <Piece charCode="&#9816;" />
+      <div>
+        <Square black>
+          <Piece charCode="&#9816;" />
+        </Square>
       </div>
     );
   }
