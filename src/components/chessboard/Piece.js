@@ -1,9 +1,11 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-export default class Piece extends Component {
+import PureComponent from '../PureComponent';
+
+export default class Piece extends PureComponent {
   render() {
     const { charCode } = this.props;
 
-    return <span>{charCode}</span>;
+    return <span style={{fontSize: 36}}>{charCode}</span>;
   }
 }

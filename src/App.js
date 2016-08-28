@@ -1,15 +1,18 @@
 import React, { Component } from 'react';
+import { fromJS } from 'immutable';
 
-import Piece from './components/chessboard/Piece';
-import Square from './components/chessboard/Square';
+import Board from './components/chessboard/Board';
 
 class App extends Component {
   render() {
+    const positions = fromJS([
+      ['\u2656', '\u265E', ''],
+      ['\u265A', '', '\u265D'],
+      ['\u2655', '\u2656', ''],
+    ]);
     return (
       <div>
-        <Square black>
-          <Piece charCode="&#9816;" />
-        </Square>
+        <Board positions={positions} />
       </div>
     );
   }
