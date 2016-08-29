@@ -9,8 +9,11 @@ export default class Square extends Component {
     return <div style={{
         backgroundColor: fill,
         color: stroke,
+        display: 'flex',
+        flexGrow: 1,
+        alignItems: 'stretch',
+        justifyContent: 'center',
         width: '100%',
-        height: '100%'
       }}>
         {this.props.children}
       </div>

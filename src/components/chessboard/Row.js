@@ -30,7 +30,10 @@ export default class Row extends PureComponent {
         .map(y => this.renderSquare(rowX, y));
 
     return (
-      <div>
+      <div style={{
+          display: 'flex',
+          flexDirection: 'row',
+        }}>
         {squares}
       </div>
     );
