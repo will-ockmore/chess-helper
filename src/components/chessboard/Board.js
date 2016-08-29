@@ -5,13 +5,20 @@ import PureComponent from '../PureComponent';
 import Row from './Row';
 
 export default class Board extends PureComponent {
+  renderRow(x) {
+    return <Row key={x} rowX={x} rowPositions={this.props.positions.get(x)} />;
+  }
   render() {
     const { positions } = this.props;
+
+    const rows =
+      positions
+        .keySeq()
+        .map(x => this.renderRow(x));
+
     return (
       <div>
-        <Row rowX={0} rowPositions={positions.get(0)} />
-        <Row rowX={1} rowPositions={positions.get(1)} />
-        <Row rowX={2} rowPositions={positions.get(2)} />
+        {rows}
       </div>
     );
   }

@@ -12,7 +12,7 @@ export default class Row extends PureComponent {
     const  { rowPositions } = this.props;
     const charCode = rowPositions.get(y);
 
-    const piece = charCode ? <Piece charCode={charCode} /> : '';
+    const piece = charCode ? <Piece charCode={charCode} /> : null;
 
       return (
         <Square black={black}>
@@ -22,19 +22,23 @@ export default class Row extends PureComponent {
     }
 
   render() {
-    const { rowX } = this.props;
+    const { rowX, rowPositions } = this.props;
+
+    const squares =
+      rowPositions
+        .keySeq()
+        .map(y => this.renderSquare(rowX, y));
 
     return (
       <div>
-        {this.renderSquare(rowX, 0)}
-        {this.renderSquare(rowX, 1)}
-        {this.renderSquare(rowX, 2)}
+        {squares}
       </div>
     );
   }
 }
 
 Row.propTypes = {
+  rowX: PropTypes.number.isRequired,
   rowPositions: PropTypes.instanceOf(
     List
   ).isRequired
