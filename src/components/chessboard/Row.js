@@ -33,8 +33,8 @@ export default class Row extends PureComponent {
 
     return (
       <div style={{
+          height: '100%',
           display: 'flex',
-          flexGrow: 1,
           flexDirection: 'row',
         }}>
         {squares}
