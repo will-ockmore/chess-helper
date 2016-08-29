@@ -15,7 +15,7 @@ export default class Row extends PureComponent {
     const piece = charCode ? <Piece charCode={charCode} /> : null;
 
       return (
-        <Square black={black}>
+        <Square key={y} black={black}>
           {piece}
         </Square>
       );
