@@ -3,15 +3,12 @@ import React, { Component, PropTypes } from 'react';
 export default class Square extends Component {
   render() {
     const { black } = this.props;
-    const fill = black ? 'black' : 'white';
-    const stroke = black ? 'white' : 'black';
+    const fill = black ? 'grey' : 'white';
 
     return <div style={{
         backgroundColor: fill,
-        color: stroke,
         display: 'flex',
-        flexGrow: 1,
-        alignItems: 'stretch',
+        alignItems: 'center',
         justifyContent: 'center',
         width: '100%',
       }}>

@@ -12,14 +12,16 @@ export default class Row extends PureComponent {
     const  { rowPositions } = this.props;
     const charCode = rowPositions.get(y);
 
-    const piece = charCode ? <Piece charCode={charCode} /> : null;
+    const piece = charCode ? <Piece charCode={charCode} /> : <Piece charCode="&nbsp;" />;
 
-      return (
-        <Square key={y} black={black}>
+    return (
+      <div key={y} style={{display: 'flex', flexGrow: 1}}>
+        <Square black={black}>
           {piece}
         </Square>
-      );
-    }
+      </div>
+    );
+}
 
   render() {
     const { rowX, rowPositions } = this.props;
@@ -32,6 +34,7 @@ export default class Row extends PureComponent {
     return (
       <div style={{
           display: 'flex',
+          flexGrow: 1,
           flexDirection: 'row',
         }}>
         {squares}

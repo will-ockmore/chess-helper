@@ -17,7 +17,13 @@ export default class Board extends PureComponent {
         .map(x => this.renderRow(x));
 
     return (
-      <div>
+      <div style={{
+          height: '550px',
+          width: '550px',
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'stretch'
+        }}>
         {rows}
       </div>
     );
