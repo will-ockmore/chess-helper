@@ -1,8 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+
+import { observe } from './Game';
 import App from './App';
 
-ReactDOM.render(
-  <App />,
-  document.getElementById('root')
-);
+observe(positions => {
+  ReactDOM.render(
+    <App positions={positions} />,
+    document.getElementById('root')
+  );
+});
