@@ -10,3 +10,7 @@ export const positions = fromJS([
   ['\u265F', '\u265F', '\u265F', '\u265F', '\u265F', '\u265F', '\u265F', '\u265F'],
   ['\u265C', '\u265E', '\u265D', '\u265B', '\u265A', '\u265D', '\u265E', '\u265C'],
 ]);
+
+export const itemTypes = {
+    PIECE: 'piece'
+};

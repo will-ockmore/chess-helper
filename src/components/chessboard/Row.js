@@ -12,7 +12,7 @@ export default class Row extends PureComponent {
     const  { rowPositions } = this.props;
     const charCode = rowPositions.get(y);
 
-    const piece = charCode ? <Piece charCode={charCode} /> : <Piece charCode="&nbsp;" />;
+    const piece = charCode ? <Piece charCode={charCode} /> : <span style={{fontSize: 36}}>&nbsp;</span>;
 
     return (
       <div key={y} style={{display: 'flex', flexGrow: 1}}>
