@@ -2,7 +2,7 @@ import React, { PropTypes } from 'react';
 import { List } from 'immutable';
 
 import PureComponent from '../PureComponent';
-import Square from './Square';
+import BoardSquare from './BoardSquare';
 import Piece from './Piece';
 
 export default class Row extends PureComponent {
@@ -16,9 +16,9 @@ export default class Row extends PureComponent {
 
     return (
       <div key={y} style={{display: 'flex', flexGrow: 1}}>
-        <Square black={black}>
+        <BoardSquare x={x} y={y} black={black}>
           {piece}
-        </Square>
+        </BoardSquare>
       </div>
     );
 }

@@ -9,7 +9,6 @@ const pieceSource = {
   }
 };
 
-
 function collect(connect, monitor) {
   return {
     connectDragSource: connect.dragSource(),
@@ -20,6 +19,7 @@ function collect(connect, monitor) {
 export class Piece extends Component {
   render() {
     const { charCode, connectDragSource, isDragging } = this.props;
+    console.log(isDragging);
 
     return connectDragSource(
       <span style={{fontSize: 36}}>{charCode}</span>
@@ -29,7 +29,6 @@ export class Piece extends Component {
 
 Piece.propTypes = {
   connectDragSource: PropTypes.func.isRequired,
-  isDragging: PropTypes.bool.isRequired
 };
 
 export default DragSource(itemTypes.PIECE, pieceSource, collect)(Piece);
