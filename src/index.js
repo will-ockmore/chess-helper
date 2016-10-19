@@ -1,12 +1,24 @@
 import React from 'react';
+import { createStore } from 'redux';
+import { Provider } from 'react-redux';
 import ReactDOM from 'react-dom';
 
-import { observe } from './Game';
+import { positions } from './utils/Constants';
+import reducer from './reducer';
+
 import App from './App';
 
-observe(positions => {
-  ReactDOM.render(
-    <App positions={positions} />,
-    document.getElementById('root')
-  );
+const store = createStore(reducer);
+store.dispatch({
+  type: 'SET_STATE',
+  payload: {
+    positions
+  }
 });
+
+ReactDOM.render(
+  <Provider store={store}>
+    <App />
+  </Provider>,
+  document.getElementById('root')
+);

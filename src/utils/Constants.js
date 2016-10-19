@@ -12,5 +12,5 @@ export const positions = fromJS([
 ]);
 
 export const itemTypes = {
-    PIECE: 'piece'
+  PIECE: 'piece'
 };

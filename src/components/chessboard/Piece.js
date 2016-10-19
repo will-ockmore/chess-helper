@@ -5,7 +5,7 @@ import { DragSource } from 'react-dnd';
 
 const pieceSource = {
   beginDrag(props) {
-    return {};
+    return {...props};
   }
 };
 
@@ -19,7 +19,7 @@ function collect(connect, monitor) {
 export class Piece extends Component {
   render() {
     const { charCode, connectDragSource, isDragging } = this.props;
-    console.log(isDragging);
+    // console.log(isDragging, this.props);
 
     return connectDragSource(
       <span style={{fontSize: 36}}>{charCode}</span>

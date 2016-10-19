@@ -1,19 +1,26 @@
 import React, { PropTypes } from 'react';
+import { DropTarget } from 'react-dnd';
+import { compose } from 'redux';
+import { connect } from 'react-redux';
+
+import { dropPiece } from '../../actions';
+import { itemTypes } from '../../utils/Constants';
+
 import Square from './Square';
 import PureComponent from '../PureComponent';
-import { itemTypes } from '../../utils/Constants';
-import { DropTarget } from 'react-dnd';
 
 
 const squareTarget = {
   drop(props, monitor) {
-    console.log(props);
-    console.log('argaoirng')
+    const { x, y } = props;
+    const { charCode } = monitor.getItem();
+
+    props.dropPiece(x, y, charCode);
   }
 }
 
 function collect(connect, monitor) {
-    return {
+  return {
     connectDropTarget: connect.dropTarget(),
     isOver: monitor.isOver()
   };
@@ -40,4 +47,7 @@ BoardSquare.propTypes = {
   isOver: PropTypes.bool.isRequired
 };
 
-export default DropTarget(itemTypes.PIECE, squareTarget, collect)(BoardSquare);
+export default compose(
+  connect(null, { dropPiece }),
+  DropTarget(itemTypes.PIECE, squareTarget, collect),
+)(BoardSquare)
